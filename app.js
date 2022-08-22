@@ -7,7 +7,11 @@ const path = require('path');
 const PORT = 3000;
 
 app.get('/', function (req, res){
-        res.sendFile(path.join(__dirname+'/index.html'));
+        res.sendFile(path.join(__dirname+'/public/view/index.html'));
+});
+
+app.get('/users', function (req, res){
+        res.sendFile(path.join(__dirname+'/public/view/users.html'));
 });
   
 app.listen(PORT, (error) =>{
