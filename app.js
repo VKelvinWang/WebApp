@@ -8,6 +8,7 @@ const PORT = 3000;
 require('dotenv').config();
 
 const indexRouter = require('./routes/index')
+const userRouter = require('./routes/users')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname+ '/views')
@@ -22,6 +23,7 @@ db.on('error', error => console.error(error))
 db.once('open', ()=>console.log('Connected to Mongoose'))
 
 app.use('/', indexRouter)
+app.use('/users', userRouter)
 
 app.listen(PORT, (error) =>{
     if(!error)
